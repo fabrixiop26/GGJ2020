@@ -5,7 +5,7 @@ func enter()->void:
 	host.has_double_jumpled = true
 
 func update(_delta: float)->void:
-	host.dir.x = update_direction()
+	host.dir.x = update_direction() * GameData.inversor
 	if host.velocity.y > 0.1 :
 		emit_signal("terminated", "Fall")
 	host.velocity.x = host.dir.x * host.speed

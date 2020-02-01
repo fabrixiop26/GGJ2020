@@ -1,18 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://mapatest/Estructuras (6).png" type="Texture" id=1]
 [ext_resource path="res://scripts/MovingPlatform.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Estructuras (6).png-19621b822f167acbb010318921a77f86.stex"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 8 )
 
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -0.450867, 0.0344391, 0, 0, 0, 0, -0.450867, -19.9438, 0, 0, 0, 0, -0.573486, -41.7035, 0, 0, 0, 0, -0.991608, -77.2439, 0, 0, 0, 0, -0.450867, 0.0344391 )
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "move"
+[sub_resource type="Animation" id=4]
+resource_name = "moving"
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -31,30 +29,29 @@ tracks/0/keys = {
 [node name="Platform" type="Node2D"]
 
 [node name="Body" type="KinematicBody2D" parent="."]
-position = Vector2( -0.960273, -74.742 )
+position = Vector2( -0.450867, 0.0344391 )
 motion/sync_to_physics = true
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Body"]
 scale = Vector2( 3, 1 )
-texture = ExtResource( 1 )
+texture = SubResource( 3 )
 
 [node name="Collision" type="CollisionShape2D" parent="Body"]
 shape = SubResource( 1 )
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 2 )
+curve = null
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( -0.960273, -74.742 )
-offset = 74.2393
+position = Vector2( -0.450867, 0.0344391 )
+offset = 279.975
 rotate = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
 remote_path = NodePath("../../../Body")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "move"
+autoplay = "moving"
 playback_process_mode = 0
-playback_speed = 0.5
-anims/move = SubResource( 3 )
+anims/moving = SubResource( 4 )

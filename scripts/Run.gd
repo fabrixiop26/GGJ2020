@@ -3,7 +3,7 @@ extends "res://scripts/State.gd"
 func enter()->void:
 	host.vector_snap = Vector2.DOWN * 16
 func update(_delta: float) -> void:
-	host.dir.x = update_direction()
+	host.dir.x = update_direction() * GameData.inversor
 	if host.dir.x == -1:
 		host.change_sprite(3)
 	if host.dir.x == 1:

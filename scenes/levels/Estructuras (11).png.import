@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Estructuras (5).png-3a533549424094f9073e54b37cf150c0.stex"
+path="res://.import/Estructuras (11).png-63f7e7e0e8259ef2b975a5120435f57c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mapatest/Estructuras (5).png"
-dest_files=[ "res://.import/Estructuras (5).png-3a533549424094f9073e54b37cf150c0.stex" ]
+source_file="res://scenes/levels/Estructuras (11).png"
+dest_files=[ "res://.import/Estructuras (11).png-63f7e7e0e8259ef2b975a5120435f57c.stex" ]
 
 [params]
 

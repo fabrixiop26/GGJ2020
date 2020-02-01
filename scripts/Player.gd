@@ -35,6 +35,9 @@ func add_time(_time : float)->void:
 	time += _time
 	EventManager.emit_signal("update_timer", time)
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		GameData.inversor = GameData.inversor * -1
 
 func _on_Timer_timeout() -> void:
 	time -= 1

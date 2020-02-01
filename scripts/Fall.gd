@@ -10,7 +10,7 @@ func update(_delta: float)->void:
 		host.has_double_jumpled = true
 		emit_signal("terminated", "DoubleJump")
 	host.apply_gravity(_delta)
-	host.dir.x = update_direction()
+	host.dir.x = update_direction() * GameData.inversor
 	if host.dir.x == -1:
 		host.change_sprite(3)
 	if host.dir.x == 1:

@@ -8,7 +8,7 @@ func enter()->void:
 func update(_delta: float)->void:
 	if host.velocity.y > 0.1 and !host.is_on_floor():
 		emit_signal("terminated", "Fall")
-	host.dir.x = update_direction()
+	host.dir.x = update_direction() * GameData.inversor
 	host.apply_gravity(_delta)
 	if host.dir.x != 0 and host.is_on_floor():
 		emit_signal("terminated","Run")

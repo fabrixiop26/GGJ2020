@@ -8,7 +8,7 @@ func enter()->void:
 
 func update(_delta: float)->void:
 	time += _delta
-	host.dir.x = update_direction()
+	host.dir.x = update_direction() * GameData.inversor
 	if host.dir.x == -1:
 		host.change_sprite(3)
 	if host.dir.x == 1:
