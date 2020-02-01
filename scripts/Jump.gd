@@ -3,6 +3,7 @@ extends "res://scripts/State.gd"
 var time : float = 0.0
 
 func enter()->void:
+	host.vector_snap = Vector2.ZERO
 	host.velocity.y = host.jump_speed
 
 func update(_delta: float)->void:
@@ -15,7 +16,7 @@ func update(_delta: float)->void:
 	if host.velocity.y > 0 :
 		emit_signal("terminated", "Fall")
 	host.velocity.x = host.dir.x * host.speed
-	host.velocity = host.move_and_slide(host.velocity, Vector2.UP)
+	host.velocity = host.move_and_slide_with_snap(host.velocity, host.vector_snap, Vector2.UP)
 	host.apply_gravity(_delta)
 
 func _input(event: InputEvent) -> void:

@@ -1,7 +1,7 @@
 extends "res://scripts/State.gd"
 
 func enter()->void:
-	pass
+	host.vector_snap = Vector2.ZERO
 
 func update(_delta: float)->void:
 	if host.is_on_floor():
@@ -16,7 +16,7 @@ func update(_delta: float)->void:
 	if host.dir.x == 1:
 		host.change_sprite(2)
 	host.velocity.x = host.dir.x * host.speed
-	host.velocity = host.move_and_slide(host.velocity,Vector2.UP)
+	host.velocity = host.move_and_slide_with_snap(host.velocity, host.vector_snap,Vector2.UP)
 	
 func update_direction()->int:
 	return int(Input.is_action_pressed("d")) - int(Input.is_action_pressed("a"))

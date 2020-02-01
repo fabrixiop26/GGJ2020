@@ -10,9 +10,10 @@ var alive = true
 var dir := Vector2.ZERO
 export(int) var speed
 var velocity := Vector2.ZERO
+var vector_snap := Vector2.DOWN * 32
 var jumping := false
 const GRAVITY = 500
-var jump_speed = -180
+var jump_speed = -230
 var has_double_jumpled := false
 var anim_string : String
 var time : int = 10
@@ -38,6 +39,7 @@ func add_time(_time : float)->void:
 func _on_Timer_timeout() -> void:
 	time -= 1
 	if time <= 0:
+		return
 		queue_free()
 	else:
 		EventManager.emit_signal("update_timer", time)
