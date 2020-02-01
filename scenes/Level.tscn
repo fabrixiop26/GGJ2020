@@ -6,12 +6,12 @@
 [ext_resource path="res://scenes/MovingPlatform.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 200, 10 )
+extents = Vector2( 140, 10 )
 
 [node name="Level" type="Node2D"]
 
 [node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2( 38.4685, 94.4669 )
+position = Vector2( 83.9563, 129.458 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 shape = SubResource( 1 )

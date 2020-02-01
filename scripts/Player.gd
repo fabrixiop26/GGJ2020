@@ -34,6 +34,9 @@ func change_sprite(_value: int)->void:
 func add_time(_time : float)->void:
 	time += _time
 	EventManager.emit_signal("update_timer", time)
+	
+func start_falling_scene()->void:
+	state_machine._on_state_changed("FallingState")
 
 func _on_Timer_timeout() -> void:
 	time -= 1
