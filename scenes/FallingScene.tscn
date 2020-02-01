@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/FallingBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 200, 10 )
+
+[node name="FallingScene" type="Node"]
+
+[node name="ColorRect" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 235.496, 132.937 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2( 245.572, 172.966 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource( 1 )

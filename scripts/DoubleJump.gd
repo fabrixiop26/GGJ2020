@@ -1,6 +1,7 @@
 extends "res://scripts/State.gd"
 
 func enter()->void:
+	host.get_node("Anim").play("Salto")
 	host.velocity.y =host.jump_speed
 	host.has_double_jumpled = true
 
