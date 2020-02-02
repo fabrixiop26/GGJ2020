@@ -8,7 +8,7 @@ func _on_Crap_body_entered(body: Node) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	global_position.y += dir.y * 400 * delta
+	global_position += dir * 600 * delta
 
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
