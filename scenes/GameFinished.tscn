@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 202.257
+margin_top = 70.3278
+margin_right = 275.257
+margin_bottom = 118.328
+text = "Game Over
+
+You WIN!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

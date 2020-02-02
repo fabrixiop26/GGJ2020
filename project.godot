@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GGJ2020"
-run/main_scene="res://scenes/Level.tscn"
+run/main_scene="res://scenes/Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -52,6 +52,10 @@ window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[global]
+
+type=false
 
 [input]
 

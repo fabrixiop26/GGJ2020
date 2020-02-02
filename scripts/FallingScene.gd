@@ -20,7 +20,8 @@ func _on_timeout() -> void:
 		num_craps = GameData.num_of_craps
 		EventManager.emit_signal("next_level")
 # warning-ignore:narrowing_conversion
-		SceneManager.change_scene("res://scenes/levels/Mapatest.tscn",0.1)
+		SceneManager.change_scene("res://scenes/Level%s.tscn" % GameData.actual_level,0.1)
+		set_physics_process(false)
 		return
 	var t = crap.instance()
 	var pos = randi()%spawners.get_child_count()
@@ -34,7 +35,7 @@ func choose_angle(pos: int)-> float:
 		0:
 			return rand_range(0.0,MAX_ANGLE)
 		1:
-			return rand_range(-MAX_ANGLE/2.0, MAX_ANGLE/2.0)
+			return rand_range(-MAX_ANGLE/3.0, MAX_ANGLE/3.0)
 		_:
 			return rand_range(0.0, -MAX_ANGLE)
 	

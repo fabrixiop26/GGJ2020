@@ -3,7 +3,7 @@ extends "res://scripts/State.gd"
 func enter()->void:
 	host.vector_snap = Vector2.DOWN * 16
 	host.has_double_jumpled = false
-	host.change_sprite(0)
+	host.change_sprite(1)
 
 func update(_delta: float)->void:
 	if host.velocity.y > 0.1 and !host.is_on_floor():

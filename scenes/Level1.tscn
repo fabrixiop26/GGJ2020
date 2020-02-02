@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Level1.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/MovingPlatformV.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/CountDown.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 140, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15, 15 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2( 197.918, 143.832 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 147.41, 78.7844 )
+
+[node name="Spawner" type="Position2D" parent="."]
+position = Vector2( 165.192, 57.0542 )
+
+[node name="Item" parent="Spawner" instance=ExtResource( 3 )]
+position = Vector2( 231.517, -33.8805 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 6.6342
+margin_top = 5.30736
+margin_right = 46.6342
+margin_bottom = 19.3074
+
+[node name="PlatformV" parent="." instance=ExtResource( 4 )]
+position = Vector2( 397.326, 142.709 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 52.3608, 58.5209 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 170.429
+margin_top = 6.1601
+margin_right = 215.429
+margin_bottom = 20.1601
+text = "Nivel 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
