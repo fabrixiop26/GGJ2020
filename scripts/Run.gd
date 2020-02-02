@@ -4,13 +4,6 @@ func enter()->void:
 	host.vector_snap = Vector2.DOWN * 16
 func update(_delta: float) -> void:
 	host.dir.x = update_direction() * GameData.inversor
-	if host.dir.x == -1:
-		host.change_sprite(3)
-	if host.dir.x == 1:
-		host.change_sprite(2)
-#	if host.is_on_floor():
-#		host.velocity.y = 0
-#	else:
 	if host.velocity.y > 0.1 and !host.is_on_floor():
 		emit_signal("terminated", "Fall")
 	host.apply_gravity(_delta)

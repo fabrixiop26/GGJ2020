@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ambiente (Intensidad muy baja).wav-8afb623c8d20693f721437e12707d119.sample"
+
+[deps]
+
+source_file="res://assets/audio/Ambiente (Intensidad muy baja).wav"
+dest_files=[ "res://.import/Ambiente (Intensidad muy baja).wav-8afb623c8d20693f721437e12707d119.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

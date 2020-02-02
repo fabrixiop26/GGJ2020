@@ -11,10 +11,6 @@ func update(_delta: float)->void:
 		emit_signal("terminated", "DoubleJump")
 	host.apply_gravity(_delta)
 	host.dir.x = update_direction() * GameData.inversor
-#	if host.dir.x == -1:
-#		host.change_sprite(3)
-#	if host.dir.x == 1:
-#		host.change_sprite(2)
 	host.velocity.x = host.dir.x * host.speed
 	host.velocity = host.move_and_slide_with_snap(host.velocity, host.vector_snap,Vector2.UP)
 	

@@ -17,6 +17,7 @@ var jump_speed = -230
 var has_double_jumpled := false
 var anim_string : String
 var time : int = 10
+var can_die := false
 
 func _ready() -> void:
 	GameData.player = self
@@ -31,17 +32,17 @@ func apply_gravity(_delta: float)->void:
 func change_sprite(_value: int)->void:
 	sprite.frame = _value
 
-func add_time(_time : float)->void:
+func add_time(_time : int)->void:
 	time += _time
 	EventManager.emit_signal("update_timer", time)
 	
 func start_falling_scene()->void:
 	state_machine._on_state_changed("FallingState")
+	speed = 200
 
 func _on_Timer_timeout() -> void:
 	time -= 1
-	if time <= 0:
-		return
+	if time <= 0 and can_die:
 		queue_free()
 	else:
 		EventManager.emit_signal("update_timer", time)

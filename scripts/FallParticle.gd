@@ -7,6 +7,6 @@ func _ready() -> void:
 	var speed = rand_range(2.5, 3.5)
 	$Anim.playback_speed = speed
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if path_follow.offset > 0 and path_follow.offset <= 5:
 		$Anim.playback_speed = rand_range(2.5, 3.5)

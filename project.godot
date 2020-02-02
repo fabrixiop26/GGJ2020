@@ -42,6 +42,7 @@ ItemMananger="*res://scripts/globals/ItemMananger.gd"
 GameData="*res://scripts/globals/GameData.gd"
 EventManager="*res://scripts/globals/EventManager.gd"
 SoundManager="*res://scripts/globals/SoundManager.gd"
+SceneManager="*res://scenes/SceneManager.tscn"
 
 [display]
 

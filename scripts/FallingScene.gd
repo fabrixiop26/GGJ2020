@@ -10,6 +10,7 @@ func _ready() -> void:
 	randomize()
 	$Timer.wait_time = GameData.time_between_craps
 	$Player.start_falling_scene()
+# warning-ignore:return_value_discarded
 	$Timer.connect("timeout", self, "_on_timeout")
 	$Timer.start()
 
@@ -18,6 +19,8 @@ func _on_timeout() -> void:
 		GameData.num_of_craps += 2
 		num_craps = GameData.num_of_craps
 		EventManager.emit_signal("next_level")
+# warning-ignore:narrowing_conversion
+		SceneManager.change_scene("res://scenes/levels/Mapatest.tscn",0.1)
 		return
 	var t = crap.instance()
 	var pos = randi()%spawners.get_child_count()
